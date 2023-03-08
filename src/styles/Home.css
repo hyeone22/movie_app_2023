@@ -1,0 +1,36 @@
+/* 로딩 */
+.container{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loader{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+.movies{
+  display: grid;
+  /* 열 2개 나오는것 | 400px까지 줄어든다. |1fr: 늘어나면 1:1비율*/
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
+  grid-gap: 100px;
+  padding: 50px;
+  /* 자식이 부모를 기준으로 80% |부모는 무조건 100% |자식이 몇%인지 알고 싶다면 (자식px/부모px)*100 = 80% */
+  width: 80%;
+  padding-top: 70px;
+  /* background-color: yellow; */
+}
+
+/* 모바일 크기되면 하나가 되어라 */
+@media screen and (max-width: 767px){ /*0~767*/
+.movies{
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+}
+
